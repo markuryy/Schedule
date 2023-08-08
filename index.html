@@ -18,6 +18,26 @@
             <div class="day" id="Friday">Friday</div>
         </div>
     </div>
-    <script src="script.js"></script>
+    
+<div class="settings-pane" id="settings-pane">
+    <div class="settings-header">
+        <span class="settings-title">Settings</span>
+        <button class="close-button" id="close-settings">X</button>
+    </div>
+    
+<div class="settings-content">
+    <h3>Manage Schedule</h3>
+    <button id="download-schedule" class="settings-button">Download Schedule</button>
+    <input type="file" id="upload-schedule" class="settings-button" accept=".json" style="display: none;">
+    <label for="upload-schedule" class="settings-button">Upload Schedule</label>
+</div>
+
+</div>
+<div class="dock">
+    <div class="dock-icon" id="settings-icon">
+        <img src="settings-cog.png" alt="Settings">
+    </div>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
