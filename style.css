@@ -203,9 +203,10 @@ body {
 @media only screen and (max-width: 768px) {
     .schedule {
         flex-direction: column;
+        align-items: center; /* Center the blocks horizontally */
     }
     .day {
-        width: 100%;
+        width: 50%; /* Take up about half the width of the screen */
         margin-bottom: 10px;
     }
 }
