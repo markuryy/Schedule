@@ -199,3 +199,13 @@ body {
 .settings-button:hover {
     background: #0056b3;
 }
+
+@media only screen and (max-width: 768px) {
+    .schedule {
+        flex-direction: column;
+    }
+    .day {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
