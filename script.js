@@ -1,32 +1,32 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 // Sample data structure for the schedule (can be replaced with actual JSON data)
-const scheduleData = {
-    "Monday": [
-        { type: "class", name: "SPA 151", location: "Baldy 114", startTime: "11:00 AM", endTime: "11:50 AM", instructor: "", fullName: "Intermediate Spanish Lecture" },
-        { type: "class", name: "EAS 207", location: "Clemens 120", startTime: "3:00 PM", endTime: "3:50 PM", instructor: "", fullName: "Statics Lecture" },
-        { type: "work", name: "Work Shift", location: "SPA Office", startTime: "4:30 PM", endTime: "6:30 PM" }
-    ],
-    "Tuesday": [
-        { type: "class", name: "MTH 142", location: "NSC 222", startTime: "11:00 AM", endTime: "12:20 PM", instructor: "", fullName: "Calculus 2 Lecture" },
-        { type: "class", name: "MTH 142", location: "Capen 240", startTime: "12:30 PM", endTime: "1:20 PM", instructor: "", fullName: "Calculus 2 Recitation" },
-    ],
-    "Wednesday": [
-        { type: "class", name: "SPA 151", location: "Baldy 114", startTime: "11:00 AM", endTime: "11:50 AM", instructor: "", fullName: "Intermediate Spanish Lecture" },
-        { type: "class", name: "EAS 207", location: "Clemens 120", startTime: "3:00 PM", endTime: "3:50 PM", instructor: "", fullName: "Statics Lecture" },
-        { type: "class", name: "EAS 207", location: "Clemens 103", startTime: "12:00 PM", endTime: "12:50 PM", instructor: "", fullName: "Statics Recitation" },
-        { type: "work", name: "Work Shift", location: "SPA Office", startTime: "3:00 PM", endTime: "6:00 PM" }
-    ],
-    "Thursday": [
-        { type: "class", name: "MTH 142", location: "NSC 222", startTime: "11:00 AM", endTime: "12:20 PM", instructor: "", fullName: "Calculus 2 Lecture" },
-    ],
-    "Friday": [
-        { type: "class", name: "SPA 151", location: "Baldy 114", startTime: "11:00 AM", endTime: "11:50 AM", instructor: "", fullName: "Intermediate Spanish Lecture" },
-        { type: "class", name: "SPA 151", location: "Bell 325", startTime: "1:00 PM", endTime: "1:50 PM", instructor: "", fullName: "Spanish Recitation" },
-        { type: "class", name: "EAS 207", location: "Clemens 120", startTime: "3:00 PM", endTime: "3:50 PM", instructor: "", fullName: "Statics Lecture" },
+    const scheduleData = {
+        "Monday": [
+            { type: "class", name: "SPA 151", location: "Baldy 114", startTime: "11:00 AM", endTime: "11:50 AM", instructor: "Ryan Seiden", fullName: "Intermediate Spanish Lecture", section: "C" },
+            { type: "class", name: "EAS 207", location: "Clemens 120", startTime: "3:00 PM", endTime: "3:50 PM", instructor: "Doga Yucalan", fullName: "Statics Lecture", section: "A" },
+            { type: "work", name: "Work Shift", location: "SPA Office", startTime: "4:00 PM", endTime: "6:00 PM" }
+        ],
+        "Tuesday": [
+            { type: "class", name: "MTH 142", location: "NSC 222", startTime: "11:00 AM", endTime: "12:20 PM", instructor: "Tara Hudson", fullName: "Calculus 2 Lecture", section: "U" },
+            { type: "class", name: "MTH 142", location: "Capen 240", startTime: "12:30 PM", endTime: "1:20 PM", instructor: "Linda Alegria", fullName: "Calculus 2 Recitation", section: "U2" },
+        ],
+        "Wednesday": [
+            { type: "class", name: "SPA 151", location: "Baldy 114", startTime: "11:00 AM", endTime: "11:50 AM", instructor: "Ryan Seiden", fullName: "Intermediate Spanish Lecture", section: "C" },
+            { type: "class", name: "EAS 207", location: "Clemens 103", startTime: "12:00 PM", endTime: "12:50 PM", instructor: "Doga Yucalan", fullName: "Statics Recitation", section: "A3" },
+            { type: "class", name: "EAS 207", location: "Clemens 120", startTime: "3:00 PM", endTime: "3:50 PM", instructor: "Doga Yucalan", fullName: "Statics Lecture", section: "A" },
+            { type: "work", name: "Work Shift", location: "SPA Office", startTime: "4:00 PM", endTime: "6:00 PM" }
+        ],
+        "Thursday": [
+            { type: "class", name: "MTH 142", location: "NSC 222", startTime: "11:00 AM", endTime: "12:20 PM", instructor: "Tara Hudson", fullName: "Calculus 2 Lecture", section: "U" },
+        ],
+        "Friday": [
+            { type: "class", name: "SPA 151", location: "Baldy 114", startTime: "11:00 AM", endTime: "11:50 AM", instructor: "Ryan Seiden", fullName: "Intermediate Spanish Lecture", section: "C" },
+            { type: "class", name: "SPA 151", location: "Bell 325", startTime: "1:00 PM", endTime: "1:50 PM", instructor: "Ryan Seiden", fullName: "Spanish Recitation", section: "A" },
+            { type: "class", name: "EAS 207", location: "Clemens 120", startTime: "3:00 PM", endTime: "3:50 PM", instructor: "Doga Yucalan", fullName: "Statics Lecture", section: "A" },
+        ]
+    };
 
-    ]
-};
 
 
 // Populate schedule
@@ -48,6 +48,7 @@ Object.keys(scheduleData).forEach(day => {
             </div>
             <div class="details">
                 ${event.fullName ? event.fullName : ''}
+                ${event.section ? 'Section: ' + event.section + '<br>' : ''}
                 ${event.instructor ? 'Instructor: ' + event.instructor + '<br>' : ''}
             </div>
         `;
